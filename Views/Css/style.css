@@ -1,0 +1,14 @@
+span{
+	padding-right: 5px;
+}
+.progress-bar{
+	height: 100%;
+}
+.progress{
+	width:100%;
+	height: 5px;
+	margin-bottom: 1px;
+}
+.container{
+	margin: 0 15%;
+}
