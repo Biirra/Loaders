@@ -1,4 +1,4 @@
-class StatusTab{
+class StatusView{
     constructor(model){
 		this.model = model;
 

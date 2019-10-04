@@ -1,5 +1,16 @@
-.tabs {
-	display: inline-flex;
+#tabs-top .tab__content {
+	position: fixed;
+	top: 6%;
+}
+#tabs-bottom {
+	position: absolute;
+    bottom: 25px;
+}
+#tabs-bottom .tab__content{
+	position: fixed;
+	top: 6%;
+	left: 0;
+	width: 100%;
 }
 .tab {
 	float: left;
