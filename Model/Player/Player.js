@@ -36,11 +36,10 @@ class Player{
 		this.healthRegen.setCurrentLevel(this.getHealthRegen());									// average of stamina, avg(strength, agility), current level.
 		this.manaRegen		= new Attribute("attrManaRegen", "Mana regeneration", 0, 999);
 		this.manaRegen.setCurrentLevel(this.getManaRegen());										// average of intelect, wisdom, current level.
-
-		this.questBook = new QuestBook();		
+		
 	}
 	update(){
-		this.questBook.update();
+		
 	}
 	claimItems(items){		
 		if(items != undefined)

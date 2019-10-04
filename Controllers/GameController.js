@@ -14,7 +14,6 @@ class GameController{
         this.start();
     }
     setupControllers(){
-        this.questController                    = new QuestBookController(this.model.getPlayer().questBook,     this.view.$questTab);
         this.attributeController                = new PlayerController(this.model.getPlayer(),                  this.view.$statusTab);
 
         this.coalGeneratorController            = new GeneratorController(this.model.getCoalGenerator(),        this.view.$generatorTab.$coalGenerator);

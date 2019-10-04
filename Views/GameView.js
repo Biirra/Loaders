@@ -20,7 +20,6 @@ class GameView{
         this.$statusTab = new StatusTab(this.model.getPlayer());
         this.$generatorTab = new GeneratorsTab(this.model); 
         this.$inventoryTab = new InventoryTab(this.model.getPlayer());
-        this.$questTab = new QuestBookTab(this.model.getPlayer().getQuestBook());
 
         return this;
     }
@@ -33,7 +32,6 @@ class GameView{
     update(){
         this.$generatorTab.update();
         this.$inventoryTab.update();
-        this.$questTab.update();
         this.$statusTab.update();
     }
     prepareChildren(){
@@ -46,7 +44,6 @@ class GameView{
         this.$playerTabs.appendChild(this.wrapElementInTab(0, "player-tab", "Status", this.$statusTab.getVisualHTML(), true));
         this.$playerTabs.appendChild(this.wrapElementInTab(1, "player-tab", "Generators", this.$generatorTab.getVisualHTML()));
         this.$playerTabs.appendChild(this.wrapElementInTab(2, "player-tab", "Inventory", this.$inventoryTab.getVisualHTML()));
-        this.$playerTabs.appendChild(this.wrapElementInTab(3, "player-tab", "Quests", this.$questTab.getVisualHTML()));
 
         return this;
     }

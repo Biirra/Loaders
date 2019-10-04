@@ -1,5 +1,0 @@
-class Land{
-    constructor(){
-        
-    }
-}
