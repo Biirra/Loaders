@@ -10,5 +10,10 @@ span{
 	margin-bottom: 1px;
 }
 .container{
-	margin: 0 15%;
+	margin: 0 5%;
+}
+@media only screen and (min-width: 600px) {
+	.container{
+		margin: 0 15%;
+	}
 }

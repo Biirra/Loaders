@@ -1,6 +1,11 @@
 .attr-nr-input{
     display: flex;
+    width: 25% !important;
 }
 .attribute-row{
-	display: flex;
+    display: flex;
+    
+}
+.attribute-row div{
+    width: 50%;
 }

@@ -1,14 +1,19 @@
+#tabs-top{
+	position: absolute;
+}
 #tabs-top .tab__content {
+	background-color: darkgray;
 	position: fixed;
-	top: 6%;
+	top: 9%;
 }
 #tabs-bottom {
 	position: absolute;
-    bottom: 25px;
+    bottom: 3%;
 }
 #tabs-bottom .tab__content{
+	background-color: darkgray;
 	position: fixed;
-	top: 6%;
+	top: 9%;
 	left: 0;
 	width: 100%;
 }
@@ -29,6 +34,13 @@
 	left: 0;
 	width: 100%;
 	opacity: 0;
+	height: 85%;
+}
+.tab__content .container{
+	background-color: lightgray;
+    padding: 0px 15px;
+	height: 100%;
+	overflow-y: scroll;
 }
 
 [type=radio]:checked ~ label {
@@ -40,4 +52,13 @@
 [type=radio]:checked ~ label ~ .tab__content {
 	z-index: 1;
 	opacity: 1;
+}
+
+@media only screen and (min-width: 600px) {
+	#tabs-bottom .tab__content{
+		top: 7%;
+	}
+	#tabs-top .tab__content {
+		top: 7%;
+	}
 }
