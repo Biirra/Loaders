@@ -1,7 +1,6 @@
 class Game{
     constructor(settings){
         this.player = new Player(settings.setting_player_name);
-        console.log(settings);
 
         // Item's with no recipe's
         this.coalOre				=	new Item("coalOre",     settings.setting_coalore_visualname, 	settings.setting_coalore_imgLocation,	settings.setting_coalore_work);
