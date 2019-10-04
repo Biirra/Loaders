@@ -1,4 +1,4 @@
-class GeneratorsTab{
+class GeneratorsView{
     constructor(model){
 		this.model = model;
 

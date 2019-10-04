@@ -16,10 +16,15 @@ class GameView{
         this.$playerInfo = new PlayerInfoView(this.model.getPlayer());
         this.$playerStatus = new PlayerStatusView(this.model.getPlayer());
 
-        this.$playerTabs = document.createElement("div");
-        this.$statusTab = new StatusTab(this.model.getPlayer());
-        this.$generatorTab = new GeneratorsTab(this.model); 
-        this.$inventoryTab = new InventoryTab(this.model.getPlayer());
+        this.$topTabsContainer = document.createElement("div");
+        this.$bottomTabsContainer = document.createElement("div");
+       
+        this.$status        = new StatusView(this.model.getPlayer());
+        this.$statusTab     = new TabView(0, "player-tab", "Status",        this.$status.getVisualHTML(), true);
+        this.$inventory     = new InventoryView(this.model.getPlayer().getInventory());
+        this.$inventoryTab  = new TabView(2, "player-tab", "Inventory",     this.$inventory.getVisualHTML());
+        this.$generators    = new GeneratorsView(this.model);
+        this.$generatorTab  = new TabView(1, "player-tab", "Generators",    this.$generators.getVisualHTML()); 
 
         return this;
     }
@@ -30,61 +35,31 @@ class GameView{
         // activate the event listeners
     }
     update(){
-        this.$generatorTab.update();
-        this.$inventoryTab.update();
-        this.$statusTab.update();
+        this.$status.update();
+        this.$generators.update();
+        this.$inventory.update();
     }
     prepareChildren(){
-        this.$playerTabs.setAttribute("id", "tabs");
+        // top tabs
+        this.$topTabsContainer.setAttribute("id", "tabs-top");
+        this.$topTabsContainer.appendChild(this.$statusTab.getVisualHTML());
+        this.$topTabsContainer.appendChild(this.$inventoryTab.getVisualHTML());
+
+        // bottom tabs
+        this.$bottomTabsContainer.setAttribute("id", "tabs-bottom");
+        this.$bottomTabsContainer.appendChild(this.$generatorTab.getVisualHTML());
+
+        //
         this.$container.setAttribute("class", "container");
         this.$container.appendChild(this.$playerInfo.getVisualHTML());
         this.$container.appendChild(this.$playerStatus.getVisualHTML());
-        this.$container.appendChild(this.$playerTabs);
-        // tabs
-        this.$playerTabs.appendChild(this.wrapElementInTab(0, "player-tab", "Status", this.$statusTab.getVisualHTML(), true));
-        this.$playerTabs.appendChild(this.wrapElementInTab(1, "player-tab", "Generators", this.$generatorTab.getVisualHTML()));
-        this.$playerTabs.appendChild(this.wrapElementInTab(2, "player-tab", "Inventory", this.$inventoryTab.getVisualHTML()));
+        this.$container.appendChild(this.$topTabsContainer);
+        this.$container.appendChild(this.$bottomTabsContainer);
 
         return this;
     }
     getVisualHTML(){
         return this.$container;
     }
-    /*
-	id: 		so label can be hooked. Unique
-	name: 		tab group. 
-	value:		Visible name of tab
-	el:			The element that needs its tab.
-	isChecked: 	(optional) true/false. option is unchecked(false) on default. Means tab is open on default.
-    */
-    wrapElementInTab(id, name, value, el, isChecked){
-        
-        let checked  = isChecked || false;
-		let result = document.createElement("div");
-		result.setAttribute("class", "tab");
-
-		let optnTab = document.createElement("input");
-		optnTab.setAttribute("type", "radio");
-		optnTab.setAttribute("name", `tab-${name}`);
-		optnTab.setAttribute("id", `tab-${id}`);
-		optnTab.checked = checked;
-
-		let lblTab = document.createElement("label");
-		lblTab.setAttribute("for", `tab-${id}`);
-		lblTab.innerHTML = value;
-
-        let content = document.createElement("div");
-        content.setAttribute("class", "container");
-        content.appendChild(el);
-
-        let contentHolder = document.createElement("div");
-        contentHolder.setAttribute("class", "tab__content");
-        contentHolder.appendChild(content);
-
-		result.appendChild(optnTab);
-		result.appendChild(lblTab);
-		result.appendChild(contentHolder);
-
-		return result;
-    }
+    
 }

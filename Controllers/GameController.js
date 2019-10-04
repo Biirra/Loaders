@@ -14,13 +14,13 @@ class GameController{
         this.start();
     }
     setupControllers(){
-        this.attributeController                = new PlayerController(this.model.getPlayer(),                  this.view.$statusTab);
+        this.attributeController                = new PlayerController(this.model.getPlayer(),                  this.view.$status);
 
-        this.coalGeneratorController            = new GeneratorController(this.model.getCoalGenerator(),        this.view.$generatorTab.$coalGenerator);
-        this.copperGeneratorController          = new GeneratorController(this.model.getCopperGenerator(),      this.view.$generatorTab.$copperGenerator);
-        this.ironGeneratorController            = new GeneratorController(this.model.getIronGenerator(),        this.view.$generatorTab.$ironGenerator);
-        this.copperIngotGeneratorController     = new GeneratorController(this.model.getCopperIngotGenerator(), this.view.$generatorTab.$copperIngotGenerator);
-        this.ironIngotGeneratorController       = new GeneratorController(this.model.getIronIngotGenerator(),   this.view.$generatorTab.$ironIngotGenerator);
+        this.coalGeneratorController            = new GeneratorController(this.model.getCoalGenerator(),        this.view.$generators.$coalGenerator);
+        this.copperGeneratorController          = new GeneratorController(this.model.getCopperGenerator(),      this.view.$generators.$copperGenerator);
+        this.ironGeneratorController            = new GeneratorController(this.model.getIronGenerator(),        this.view.$generators.$ironGenerator);
+        this.copperIngotGeneratorController     = new GeneratorController(this.model.getCopperIngotGenerator(), this.view.$generators.$copperIngotGenerator);
+        this.ironIngotGeneratorController       = new GeneratorController(this.model.getIronIngotGenerator(),   this.view.$generators.$ironIngotGenerator);
     }
     setupHandlers(){
 
