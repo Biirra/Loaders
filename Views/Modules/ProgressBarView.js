@@ -1,16 +1,13 @@
 class ProgressBarView{
     constructor(model){
         this.model = model;
-        
-		this.foreGroundColor = new Color(255, 0, 0);			// default color foreground.
-		this.backGroundColor = new Color(0, 0, 0);				// default color background.
+		this.foreGroundColor = this.model.foreGroundColor;			// default color foreground.
+		this.backGroundColor = this.model.backGroundColor;				// default color background.
 		this.init();
 	}
 	init() {
 		this.createChildren();
 		this.prepareChildren();
-        this.setupHandlers();
-        this.enable();
         this.update();
 	}
     createChildren(){
@@ -35,14 +32,6 @@ class ProgressBarView{
 	getVisualHTML(){
 		return this.$container;
 	}
-    setupHandlers(){
-		// add eventlisteners
-		return this;
-    }
-    enable(){
-		// activate the event listeners
-		return this;
-    }
     update(){
 		let currentPercentage = this.model.getCurrentPercentage().toFixed(2);
 		this.$foreground.style.width = currentPercentage + "%";
