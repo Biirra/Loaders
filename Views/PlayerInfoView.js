@@ -1,5 +1,5 @@
 class PlayerInfoView{
-    constructor(model){
+	constructor(model){
 		this.model = model;
 
 		this.init();
@@ -7,32 +7,34 @@ class PlayerInfoView{
 	init() {
 		this.createChildren();
 		this.prepareChildren();
-        this.setupHandlers();
-        this.enable();
-    }
-    createChildren(){
-        this.$container = document.createElement("div");
-        this.$playerName = document.createElement("div");
+		this.setupHandlers();
+		this.enable();
+	}
+	createChildren(){
+		this.$container = document.createElement("div");
+		this.$playerName = document.createElement("div");
+		this.$level = document.createElement("div");
 		return this;
 	}
 	prepareChildren(){
-        this.$container.appendChild(this.$playerName);
+		this.$container.appendChild(this.$playerName);
+		this.$container.appendChild(this.$level);
 
-        this.$playerName.innerHTML = this.model.name;
+		this.$playerName.innerHTML = this.model.name;
 		return this;
 	}
-    setupHandlers(){
+	setupHandlers(){
 		// add eventlisteners
 		return this;
-    }
-    enable(){
+	}
+	enable(){
 		// activate the event listeners
 		return this;
 	}
 	getVisualHTML(){
 		return this.$container;
 	}
-    update(){
-
+	update(){
+		this.$level.innerHTML = `lvl: ${this.model.level.getCurrentLevel()}`;
 	}
 }
