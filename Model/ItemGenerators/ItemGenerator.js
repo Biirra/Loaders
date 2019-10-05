@@ -23,7 +23,7 @@ class ItemGenerator{
 		this.validItems = validItems;					// can generate the following items.
 		this.inventory = new Inventory(this.name);		// way to keep the items it generates
 		
-		this.progressBar = new ProgressBar(this.name);
+		this.progressBar = new ProgressBar_Continuous(this.name);
 		this.progressBar.setMaxValue(this.currentItem.work);
 	}
 	getMaxItems(){
@@ -54,7 +54,7 @@ class ItemGenerator{
 		if(this.isFull())
 			return;
 		
-		this.progressBar.routine();
+		this.progressBar.update();
 		let completed = this.progressBar.completed;
 		
 		if(completed <= 0)

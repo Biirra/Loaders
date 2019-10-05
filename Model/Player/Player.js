@@ -7,11 +7,12 @@ class Player{
 		this.level 		= new Level(0, 30);															// global indicator of players current skills.
 		// TODO: 
 		// - create functionality so code below actually has impact.		
-		this.health 	= new ProgressBar(`${this.name}-health`);									// The players health;
+		this.health 	= new Base_ProgressBar(`${this.name}-health`);									// The players health;
 		this.health.setCurrentValue(this.health.maxValue);											// Player is healthy on creation.
 		
-		this.mana 		= new ProgressBar(`${this.name}-mana`);
+		this.mana 		= new Base_ProgressBar(`${this.name}-mana`);
 		this.mana.setCurrentValue(this.mana.maxValue);
+		this.mana.foreGroundColor = new Color(0, 0, 230, 1);
 
 		//-------------------
 		// Inventory's
@@ -39,7 +40,7 @@ class Player{
 		
 	}
 	update(){
-		
+
 	}
 	claimItems(items){		
 		if(items != undefined)

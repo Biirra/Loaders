@@ -38,6 +38,8 @@ class GameView{
         this.$status.update();
         this.$generators.update();
         this.$inventory.update();
+        
+        this.$playerInfo.update();
     }
     prepareChildren(){
         // top tabs
