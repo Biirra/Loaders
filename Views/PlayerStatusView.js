@@ -7,8 +7,6 @@ class PlayerStatusView{
 	init() {
 		this.createChildren();
 		this.prepareChildren();
-        this.setupHandlers();
-        this.enable();
     }
     createChildren(){
         this.$container = document.createElement("div");
@@ -22,14 +20,6 @@ class PlayerStatusView{
         this.$container.appendChild(this.$healthBar.getVisualHTML());
         this.$container.appendChild(this.$ManaBar.getVisualHTML());
 
-		return this;
-	}
-    setupHandlers(){
-		// add eventlisteners
-		return this;
-    }
-    enable(){
-		// activate the event listeners
 		return this;
 	}
 	getVisualHTML(){

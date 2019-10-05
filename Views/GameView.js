@@ -7,8 +7,6 @@ class GameView{
     init() {
         this.createChildren();
         this.prepareChildren();
-        this.setupHandlers();
-        this.enable();
     }
     createChildren(){
         this.$container = document.createElement("div");
@@ -27,12 +25,6 @@ class GameView{
         this.$generatorTab  = new TabView(1, "player-tab", "Generators",    this.$generators.getVisualHTML()); 
 
         return this;
-    }
-    setupHandlers(){
-        // add eventlisteners
-    }
-    enable(){
-        // activate the event listeners
     }
     update(){
         this.$status.update();

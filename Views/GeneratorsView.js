@@ -7,8 +7,6 @@ class GeneratorsView{
 	init() {
 		this.createChildren();
 		this.prepareChildren();
-        this.setupHandlers();
-        this.enable();
     }
     createChildren(){
         this.$container = document.createElement("div");
@@ -30,14 +28,6 @@ class GeneratorsView{
         this.$container.appendChild(this.$ironGenerator.getVisualHTML());
         this.$container.appendChild(this.$copperIngotGenerator.getVisualHTML());
         this.$container.appendChild(this.$ironIngotGenerator.getVisualHTML());
-		return this;
-	}
-    setupHandlers(){
-		// add eventlisteners
-		return this;
-    }
-    enable(){
-		// activate the event listeners
 		return this;
 	}
 	getVisualHTML(){

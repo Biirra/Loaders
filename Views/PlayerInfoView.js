@@ -7,8 +7,6 @@ class PlayerInfoView{
 	init() {
 		this.createChildren();
 		this.prepareChildren();
-		this.setupHandlers();
-		this.enable();
 	}
 	createChildren(){
 		this.$container = document.createElement("div");
@@ -21,14 +19,6 @@ class PlayerInfoView{
 		this.$container.appendChild(this.$level);
 
 		this.$playerName.innerHTML = this.model.name;
-		return this;
-	}
-	setupHandlers(){
-		// add eventlisteners
-		return this;
-	}
-	enable(){
-		// activate the event listeners
 		return this;
 	}
 	getVisualHTML(){

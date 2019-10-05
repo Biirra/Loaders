@@ -7,8 +7,6 @@ class StatusView{
 	init() {
 		this.createChildren();
 		this.prepareChildren();
-        this.setupHandlers();
-        this.enable();
     }
     createChildren(){
 		this.$container = document.createElement("div");
@@ -30,14 +28,6 @@ class StatusView{
 		this.$container.appendChild(this.$agility.getVisualHTML());
 		this.$container.appendChild(this.$charisma.getVisualHTML());
 		this.$container.appendChild(this.$luck.getVisualHTML());
-		return this;
-	}
-    setupHandlers(){
-		// add eventlisteners
-		return this;
-    }
-    enable(){
-		// activate the event listeners
 		return this;
 	}
 	getVisualHTML(){
