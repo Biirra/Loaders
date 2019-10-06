@@ -2,10 +2,11 @@ class ItemFabricator extends ItemGenerator{
 	constructor(name, visualname, currentItem, validItems, owner){
 		super(name, visualname, currentItem, validItems, owner);
 	}
-	update(){	// TODO: Might need to redo this. 
+	update(){	// TODO: need to redo this. 
 		// Seems inefficient and heavy in use. 
 		// it might do a hasInventoryInSelf() to many since this also happens in player
-		
+		// Also it requires materials and those need to be asked not taken.
+
 		// if fabricator is full dont do anything.
 		if(this.isFull())
 			return;
@@ -16,7 +17,7 @@ class ItemFabricator extends ItemGenerator{
 		if(!inventory.hasInventoryInSelf(this.currentItem.getRecipe()))
 			return;
 
-		this.progressBar.routine();
+		this.progressBar.update();
 		
 		if(completed < 0)
 			completed = 0;

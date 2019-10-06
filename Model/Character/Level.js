@@ -37,4 +37,5 @@ class Level{
 	isLowestLevel(){
 		return this.getCurrentLevel() <= this.getMinLevel();
 	}
+	
 }
