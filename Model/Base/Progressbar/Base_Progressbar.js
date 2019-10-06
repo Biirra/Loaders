@@ -8,7 +8,7 @@ class Base_ProgressBar{
 		this.speed = 0; 										// how fast the progress bar fills up.
 		this.paused = false;
 		this.completed = 0;										// amount of times it has reached it maxValue.
-		this.foreGroundColor = new Color(255, 0, 0);			// default color foreground.
+		this.foreGroundColor = new Color(255, 255, 255);			// default color foreground.
 		this.backGroundColor = new Color(0, 0, 0);				// default color background.
 	}
 	getCurrentPercentage(){		// returns the percentage of current progress.
