@@ -6,31 +6,33 @@
         <link rel="stylesheet" href="Views/Css/style.css" />
         <link rel="stylesheet" href="Views/Css/attributes.css" />
 
+        <!-- Adding all models -->
         <script src="Model/Base/EventHandler.js"></script>
         <script src="Model/Base/Color.js"></script>
-        <script src="Model/Base/Item.js"></script>
-        <script src="Model/Base/Inventory.js"></script>
-        <script src="Model/Base/Level.js"></script>
-
         <script src="Model/Base/Progressbar/Base_Progressbar.js"></script>
         <script src="Model/Base/Progressbar/ProgressBar_Continuous.js"></script>
         <script src="Model/Base/Progressbar/ProgressBar_Rounds.js"></script>
+        <script src="Model/Base/Progressbar/ProgressBar_Health.js"></script>
+        <script src="Model/Base/Progressbar/ProgressBar_Mana.js"></script>
 
-        <script src="Model/ItemGenerators/ItemGenerator.js"></script>
-        <script src="Model/ItemGenerators/ItemFabricator.js"></script>
+        <script src="Model/Item/Item.js"></script>
+        <script src="Model/Item/ItemGenerators/ItemGenerator.js"></script>
+        <script src="Model/Item/ItemGenerators/ItemFabricator.js"></script>
 
-        <script src="Model/Player/Attribute.js"></script>
-        <script src="Model/Player/Player.js"></script>
+        <script src="Model/Character/Level.js"></script>
+        <script src="Model/Character/Inventory.js"></script>
+        <script src="Model/Character/PlayableCharacter/Attribute.js"></script>
+        <script src="Model/Character/PlayableCharacter/Player.js"></script>
 
         <script src="Model/Game.js"></script>
+        <!-- End adding all models -->
 
-
+        <!-- Adding views -->
         <script src="Views/Modules/AttributeView.js"></script>
         <script src="Views/Modules/ProgressBarView.js"></script>
         <script src="Views/Modules/GeneratorView.js"></script>
         <script src="Views/Modules/TabView.js"></script>
         <script src="Views/Modules/ItemView.js"></script>
-
 
         <script src="Views/PlayerInfoView.js"></script>
         <script src="Views/PlayerStatusView.js"></script>
@@ -42,11 +44,14 @@
         <!-- end Tabs-->
 
         <script src="Views/GameView.js"></script>
+        <!-- End adding views -->
 
+        <!-- Adding controllers -->
         <script src="Controllers/GameController.js"></script>
         <script src="Controllers/GeneratorController.js"></script>
         <script src="Controllers/AttributeController.js"></script>
         <script src="Controllers/PlayerController.js"></script>
+        <!-- End adding controllers -->
 
         <script src="Settings.js"></script>
     </head>
